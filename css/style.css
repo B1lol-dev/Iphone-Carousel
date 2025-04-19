@@ -2,6 +2,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+:root {
+  --ip-desert: rgb(191, 164, 143);
+  --ip-natural: rgb(194, 188, 178);
+  --ip-white: rgb(242, 241, 235);
+  --ip-black: rgb(60, 60, 61);
 }
 
 body {
@@ -22,15 +30,15 @@ body {
   .bg_overlay {
     height: 50px;
     width: 50px;
-    background: gray;
+    background: var(--ip-desert);
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0.8;
-    animation: overlayMove 2s ease forwards;
     border-radius: 50%;
     z-index: -10;
+    animation: overlayMove 1s ease forwards;
   }
 
   .iphone {
@@ -79,4 +87,57 @@ body {
       height: 700px;
     }
   }
+}
+
+.controls {
+  display: flex;
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  gap: 1rem;
+  padding: 0.8rem;
+  border-radius: 1rem;
+
+  button {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    border: none;
+    outline: 1px solid black;
+    position: relative;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+
+    &:active {
+      opacity: 0.6;
+    }
+
+    &:nth-child(1) {
+      background-color: var(--ip-desert);
+    }
+
+    &:nth-child(2) {
+      background-color: var(--ip-natural);
+    }
+
+    &:nth-child(3) {
+      background-color: var(--ip-white);
+    }
+
+    &:nth-child(4) {
+      background-color: var(--ip-black);
+    }
+  }
+}
+
+.title {
+  position: fixed;
+  top: 6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3rem;
+  pointer-events: none;
+  text-transform: capitalize;
 }

@@ -18,3 +18,20 @@ iphone.addEventListener("mouseleave", () => {
   rock_left.style.translate = "";
   rock_right.style.translate = "";
 });
+
+// controls
+const stand = document.querySelector(".stand");
+// filter: drop-shadow(0 0 100px white);
+const controls = document.querySelector(".controls");
+const title = document.querySelector(".title");
+
+function changeIphone(color) {
+  iphone.src = `./assets/iphones/iphone_${color}.png`;
+  title.innerText = color;
+
+  document.querySelector(".bg_overlay").remove();
+  const bgOverlayElm = document.createElement("div");
+  bgOverlayElm.className = "bg_overlay";
+  bgOverlayElm.style.backgroundColor = `var(--ip-${color})`;
+  stand.appendChild(bgOverlayElm);
+}

@@ -3,3 +3,80 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  min-height: 100vh;
+  background: url(../assets/background.jpg) no-repeat center center fixed;
+}
+
+.stand {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  .bg_overlay {
+    height: 50px;
+    width: 50px;
+    background: gray;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.8;
+    animation: overlayMove 2s ease forwards;
+    border-radius: 50%;
+    z-index: -10;
+  }
+
+  .iphone {
+    height: 450px;
+    object-fit: cover;
+    transform: translateY(60px);
+    transition: 0.3s ease-out;
+    position: relative;
+    z-index: 1;
+
+    &:hover {
+      transform: translateY(0px);
+    }
+  }
+
+  .rock_stand {
+    width: 500px;
+    object-fit: cover;
+    transition: 0.3s ease-out;
+    position: relative;
+    z-index: 0;
+  }
+}
+
+@keyframes overlayMove {
+  to {
+    transform: translate(-50%, -50%) scale(50);
+  }
+}
+
+.rocks {
+  display: flex;
+  width: 100vw;
+  bottom: 0;
+  justify-content: space-between;
+  align-items: end;
+  position: fixed;
+  bottom: -150px;
+  pointer-events: none;
+
+  img {
+    width: 500px;
+    transition: 0.3s ease-out;
+
+    &:first-child {
+      height: 700px;
+    }
+  }
+}

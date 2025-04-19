@@ -35,3 +35,9 @@ function changeIphone(color) {
   bgOverlayElm.style.backgroundColor = `var(--ip-${color})`;
   stand.appendChild(bgOverlayElm);
 }
+
+// loader
+const loader = document.getElementById("loader_wrapper");
+window.addEventListener("load", () => {
+  loader.remove();
+});
